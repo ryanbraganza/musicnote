@@ -4,7 +4,7 @@ require "evernote"
 require "json"
 
 configure do
-  set :port, 80
+  set :port, Integer(ENV.fetch('PORT', 80))
   use Rack::CommonLogger, File.new('sinatra.log', 'w')
 end
 
